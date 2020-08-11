@@ -7,10 +7,16 @@
       "environmentFiles": null,
       "logConfiguration": null,
       "entryPoint": null,
-      "portMappings": [],
+      "portMappings": [
+        {
+          "hostPort": 0,
+          "protocol": "tcp",
+          "containerPort": 8000
+        }
+      ],
       "command": null,
       "linuxParameters": null,
-      "cpu": 0,
+      "cpu": 128,
       "environment": [],
       "resourceRequirements": null,
       "ulimits": null,
@@ -20,10 +26,10 @@
       "secrets": null,
       "dockerSecurityOptions": null,
       "memory": null,
-      "memoryReservation": null,
+      "memoryReservation": 128,
       "volumesFrom": [],
       "stopTimeout": null,
-      "image": "nginx",
+      "image": "156097259815.dkr.ecr.eu-west-1.amazonaws.com/json-files-pipeline:latest",
       "startTimeout": null,
       "firelensConfiguration": null,
       "dependsOn": null,
@@ -40,7 +46,7 @@
       "dockerLabels": null,
       "systemControls": null,
       "privileged": null,
-      "name": "web"
+      "name": "nginx"
     }
   ],
   "placementConstraints": [],
@@ -49,9 +55,21 @@
   "compatibilities": [
     "EC2"
   ],
-  "taskDefinitionArn": "arn:aws:ecs:eu-west-1:156097259815:task-definition/json-files-pipeline-task-definition:1",
+  "taskDefinitionArn": "arn:aws:ecs:eu-west-1:156097259815:task-definition/json-files-pipeline-task-definition:3",
   "family": "json-files-pipeline-task-definition",
   "requiresAttributes": [
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "com.amazonaws.ecs.capability.ecr-auth"
+    },
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.21"
+    },
     {
       "targetId": null,
       "targetType": null,
@@ -65,7 +83,7 @@
   ],
   "networkMode": null,
   "cpu": "256",
-  "revision": 1,
+  "revision": 3,
   "status": "ACTIVE",
   "inferenceAccelerators": null,
   "proxyConfiguration": null,
