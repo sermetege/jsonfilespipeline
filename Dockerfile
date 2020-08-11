@@ -1,11 +1,3 @@
-server {
-    listen 8000 default_server;
-    listen [::]:8000 default_server;
-    server_name _;
-	
-    charset utf-8;
-	
-    location / {
-        alias /app;
-    }
-}
+FROM nginx
+COPY nginx.conf /etc/nginx/nginx.conf
+CMD docker run --name dson-files-pipeline-container -d json-files-pipeline
