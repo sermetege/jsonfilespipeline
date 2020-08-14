@@ -76,6 +76,6 @@ jobs:
       uses: aws-actions/amazon-ecs-deploy-task-definition@v1
       with:
         task-definition: ${{ steps.task-def.outputs.task-definition }}
-        service: test-service
+        service: json-files-pipeline
         cluster: phoenix
         wait-for-service-stability: true
